@@ -31,17 +31,16 @@
 				
 				//var H = documentElement.clientHeight;
 				//var W =  documentElement.clientWidth;
-				
-				cube.rotation.x += 0.1
+				var x = event.clientX;
+				if ( x > 500) {cube.rotation.x += 0.1};
 						
 					
-				//cube.rotation.y += 0.1;
+				cube.rotation.y += 0.1;
 
-				
-			};
 				renderer.render(scene, camera);
-				var x = event.clientX;
-				if ( x > 500) animate();
+			};
+				
+				
 				
 			
 		</script>
