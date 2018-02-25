@@ -1,48 +1,20 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset=utf-8>
-
-		<style>
-			body { margin: 0; }
-			canvas { width: 100%; height: 100% }
-		</style>
-	</head>
-	<body>
-		<script src="js/three.js"></script>
-		
-		<script>
-			var scene = new THREE.Scene();
-			var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
-
-		 	var renderer = new THREE.WebGLRenderer();
-			renderer.setSize( window.innerWidth, window.innerHeight );
-			document.body.appendChild( renderer.domElement );
-
-			var geometry = new THREE.BoxGeometry( 1, 1, 1 );
-			var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-			var cube = new THREE.Mesh( geometry, material );
-			scene.add( cube );
-
-			camera.position.z = 5;
+var cursorX;
+			var cursorY;
+			var wd=document.documentElement.clientWidth/2
+			document.onmousemove = function(e){
+    				cursorX = e.pageX;
+    				cursorY = e.pageY;
+				}
 
 			var animate = function () {
 				requestAnimationFrame( animate );
-				
-				//var H = documentElement.clientHeight;
-				//var W =  documentElement.clientWidth;
-				if (event.clientX >300)
+            
+			if (cursorX> wd)
 				cube.rotation.x += 0.1;
-						
-					
-				cube.rotation.y += 0.1;
+			else
+				{cube.rotation.x += -0.1;
+				cube.rotation.y += 0.1;}
+				//console.log(cursorX);
 
 				renderer.render(scene, camera);
 			};
-				
-			animate();	
-				
-			
-		</script>
-	</body>
-</html>
