@@ -30,7 +30,7 @@
 			var cursorY;
 			
 			var wd=document.documentElement.clientWidth/3
-			
+			var hd=document.documentElement.clientHeight/3
 			document.onmousemove = function(e){
     				cursorX = e.pageX;
     				cursorY = e.pageY;
@@ -44,10 +44,16 @@
 			else
 				{if (cursorX< wd) cube.rotation.y += -0.02
 			else
-				cube.rotation.y += 0;
-				//cube.rotation.x += 0.02;
-				}
-				//console.log(cursorX);
+				cube.rotation.y += 0;}
+			
+			if (cursorY > hd*2) 
+				cube.rotation.x += 0.02;			}
+				
+			else
+				if (cursorY < hd) cube.rotation.x += -0.02
+			else
+				cube.rotation.x += 0;}
+					//console.log(cursorX);
 
 				renderer.render(scene, camera);
 			};
