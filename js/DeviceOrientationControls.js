@@ -100,6 +100,42 @@ THREE.DeviceOrientationControls = function( object ) {
 
 	};
 
+	this.getDOA =function (){
+
+		if ( scope.enabled === false ) return;
+		var device = scope.deviceOrientation;
+		if ( device ) {
+
+			return device.alpha ? THREE.Math.degToRad( device.alpha ) + scope.alphaOffset : 0; // Z
+
+		}
+
+	};
+
+		this.getDOB =function (){
+
+		if ( scope.enabled === false ) return;
+		var device = scope.deviceOrientation;
+		if ( device ) {
+
+			return device.beta ? THREE.Math.degToRad( device.beta ) : 0;
+
+		}
+
+	};
+
+		this.getDOG =function (){
+
+		if ( scope.enabled === false ) return;
+		var device = scope.deviceOrientation;
+		if ( device ) {
+
+			return device.gamma ? THREE.Math.degToRad( device.gamma ) : 0; // Z
+
+		}
+
+	};
+
 	this.dispose = function() {
 
 		scope.disconnect();
