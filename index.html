@@ -63,21 +63,21 @@
 				document.body.appendChild(text2);
 
 
-
+var updateTextCounter= 10;
 			var animate = function () {
 				requestAnimationFrame( animate );
 				
 		if (mob)		
 		{ 
-			if (couunt== 100)
+			if (couunt==updateTextCounter)
 			 {console.log("text update");
-			cord.textContent="alpha: " + controls.a.toString+ " <br /> "+ " beta: "+ controls.b.toString + "<br />"+" gamma: "+controls.g.toString ; 
+			 text.textContent="alpha: " + controls.a+ " <br /> "+ " beta: "+ controls.b + "<br />"+" gamma: "+controls.g; 
 			 controls.update();
 			 count=0;}
 		}else
-		{	if(count==100)
+		{	if(count==updateTextCounter)
 			 {console.log("text update");
-		         text2.textContent ="rotation y: " + cube.rotation.y +"<br />"+" rotation x: "+cube.rotation.x  +"<br />"+" rotation z: "+cube.rotation.z ;}
+		         text2.textContent = 'rotation y:'  + cube.rotation.y +"<br />"+' rotation x: '+cube.rotation.x'  +"<br />" + ' rotation z: '+cube.rotation.z ;}
 		}
 				
 				
