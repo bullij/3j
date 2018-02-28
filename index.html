@@ -70,14 +70,20 @@ var updateTextCounter= 10;
 		if (mob)		
 		{ 
 			if (couunt==updateTextCounter)
-			 {console.log("text update");
-			 text.textContent="alpha: " + controls.a+ " <br /> "+ " beta: "+ controls.b + "<br />"+" gamma: "+controls.g; 
+			 {
+				text2.textContent ="alpha: " + controls.a +"\r\n";
+				text2.textContent +="beta: "+ controls.b  +"\r\n";
+				text2.textContent +="gamma: "+controls.g; 
 			 controls.update();
 			 count=0;}
 		}else
 		{	if(count==updateTextCounter)
-			 {console.log("text update");
-		         text2.textContent = 'rotation y:'  + cube.rotation.y +"<br />"+' rotation x: '+cube.rotation.x'  +"<br />" + ' rotation z: '+cube.rotation.z ;}
+			 {
+		         	text2.textContent ="rotation y: " + cube.rotation.y +"\r\n";
+				text2.textContent +="rotation x: "+cube.rotation.x  +"\r\n";
+				text2.textContent +="rotation z: "+cube.rotation.z ;
+			       count=0;
+			 }
 		}
 				
 				
