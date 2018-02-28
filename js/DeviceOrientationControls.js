@@ -60,13 +60,13 @@ THREE.DeviceOrientationControls = function( object ) {
 
 	}();
 
-var getDO=function(do)
+this.getDO=function(d)
 	{
-      if (do == 1)
+      if (d == 1)
       	{return a;}
-      if (do == 2)
+      if (d == 2)
       	{return b;}
-      if (do == 3)
+      if (d == 3)
       	{return g;}
 
 	}
