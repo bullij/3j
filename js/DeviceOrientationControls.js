@@ -8,6 +8,9 @@
 THREE.DeviceOrientationControls = function( object ) {
 
 	var scope = this;
+	var a;
+	var b;
+	var j;
 
 	this.object = object;
 	this.object.rotation.reorder( "YXZ" );
@@ -36,7 +39,7 @@ THREE.DeviceOrientationControls = function( object ) {
 	var setObjectQuaternion = function() {
 
 		var zee = new THREE.Vector3( 0, 0, 1 );
-
+        
 		var euler = new THREE.Euler();
 
 		var q0 = new THREE.Quaternion();
@@ -93,6 +96,12 @@ THREE.DeviceOrientationControls = function( object ) {
 
 			var orient = scope.screenOrientation ? THREE.Math.degToRad( scope.screenOrientation ) : 0; // O
 
+            a=alpha;
+
+            b=beta;
+
+            g=gamma;
+
 			setObjectQuaternion( scope.object.quaternion, alpha, beta, gamma, orient );
 
 		}
@@ -100,41 +109,6 @@ THREE.DeviceOrientationControls = function( object ) {
 
 	};
 
-	this.getDOA =function (){
-
-		if ( scope.enabled === false ) return;
-		var device = scope.deviceOrientation;
-		if ( device ) {
-
-			return device.alpha ? THREE.Math.degToRad( device.alpha ) + scope.alphaOffset : 0; // Z
-
-		}
-
-	};
-
-		this.getDOB =function (){
-
-		if ( scope.enabled === false ) return;
-		var device = scope.deviceOrientation;
-		if ( device ) {
-
-			return device.beta ? THREE.Math.degToRad( device.beta ) : 0;
-
-		}
-
-	};
-
-		this.getDOG =function (){
-
-		if ( scope.enabled === false ) return;
-		var device = scope.deviceOrientation;
-		if ( device ) {
-
-			return device.gamma ? THREE.Math.degToRad( device.gamma ) : 0; // Z
-
-		}
-
-	};
 
 	this.dispose = function() {
 
