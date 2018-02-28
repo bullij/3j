@@ -57,13 +57,13 @@
 				text2.style.width = 100;
 				text2.style.height = 100;
 				text2.style.color = "white";
-				text2.innerHTML = "hi there!";
+				text2.setAttribute('style', 'white-space: pre;');
 				text2.style.top = 10+ 'px';
 				text2.style.left = 10 + 'px';
 				document.body.appendChild(text2);
 
 
-var updateTextCounter= 10;
+var updateTextCounter= 1;
 			var animate = function () {
 				requestAnimationFrame( animate );
 				
