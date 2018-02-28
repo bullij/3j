@@ -15,7 +15,13 @@
 		<script>
 			var scene = new THREE.Scene();
 			var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
-                        var controls = new THREE.DeviceOrientationControls( camera );
+			//проверка на моб устройство(неполная)
+			var mob= false;
+			if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                          mob=true;
+		          var controls = new THREE.DeviceOrientationControls( camera );
+                        }
+                        
 			var renderer = new THREE.WebGLRenderer();
 			renderer.setSize( window.innerWidth, window.innerHeight );
 			document.body.appendChild( renderer.domElement );
@@ -39,10 +45,12 @@
 
 			var animate = function () {
 				requestAnimationFrame( animate );
-				
-             console.log(controls.a);
-	     console.log(controls.b);
-	     console.log(controls.g);
+		if (mob)		
+		{  console.log(controls.a);
+	           console.log(controls.b);
+	           console.log(controls.g);
+		   controls.update();
+		}
 				
 	  		if (cursorX> wd*2)
 				cube.rotation.y += 0.02;
@@ -60,7 +68,7 @@
 			else
 				cube.rotation.x += 0;}
 					//console.log(cursorX);
-                        	controls.update();
+                        	
 				renderer.render(scene, camera);
 			};
 				
