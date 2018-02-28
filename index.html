@@ -16,6 +16,7 @@
 		<div id="cord "></div> 
 		
 		<script>
+			var count =0 ;
 			var scene = new THREE.Scene();
 			var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
 			//проверка на моб устройство(неполная)
@@ -60,6 +61,7 @@
 			text2.style.color= "white";
 			text2.style.top = 10 + 'px';
 			text2.style.left = 10 + 'px';
+			text2.innerHtml="Created";
 			document.body.appendChild(text2);
 
 
@@ -67,12 +69,14 @@
 			var animate = function () {
 				requestAnimationFrame( animate );
 				
-		if (mob)		
+		if (mob && count==100)		
 		{  
 		 cord.textContent.replace="alpha: " + controls.a.toString+ " \n "+ " beta: "+ controls.b.toString + "\n gamma: "+controls.g.toString ; 
 		controls.update();
+		count=0;
 		}else
 		{text2.innerHtml="rotation y: " + cube.rotation.y +"\n rotation x: "+cube.rotation.x  +"\n rotation z: "+cube.rotation.z ;
+		count=0;
 		}
 				
 				
@@ -95,6 +99,7 @@
 					//console.log(cursorX);
                         	
 				renderer.render(scene, camera);
+				count++;
 			};
 				
 				 animate();
