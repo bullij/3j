@@ -6,14 +6,7 @@
 		<style>
 			body { margin: 0; }
 			canvas { width: 100%; height: 100% }
-			#cord 
-			{	position: absolute;
-				top: 10px;
-				width: 100%;
-				text-align: center;
-				z-index: 100;
-				color: white;
-				display:block; }
+		
 		</style>
 	</head>
 	<body>
@@ -55,15 +48,31 @@
     				cursorY = e.pageY;
 				}
 
+
+
+
+            var text2 = document.createElement('div');
+
+			text2.style.position = 'absolute';
+			//text2.style.zIndex = 200;    // if you still don't see the label, try uncommenting this
+			text2.style.width = 100;
+			text2.style.height = 300;
+			text2.style.color= "white";
+			text2.style.top = 10 + 'px';
+			text2.style.left = 10 + 'px';
+			document.body.appendChild(text2);
+
+
+
 			var animate = function () {
 				requestAnimationFrame( animate );
 				
 		if (mob)		
 		{  
-		 cord.textContent.replace("alpha: " + controls.a.toString+ " \n "+ " beta: "+ controls.b.toString + "\n gamma: "+controls.g.toString) ; 
+		 cord.textContent.replace="alpha: " + controls.a.toString+ " \n "+ " beta: "+ controls.b.toString + "\n gamma: "+controls.g.toString ; 
 		controls.update();
 		}else
-		{cord.innerHtml("rotation y: " + cube.rotation.y +"\n rotation x: "+cube.rotation.x  +"\n rotation z: "+cube.rotation.z) ;
+		{text2.innerHtml="rotation y: " + cube.rotation.y +"\n rotation x: "+cube.rotation.x  +"\n rotation z: "+cube.rotation.z ;
 		}
 				
 				
