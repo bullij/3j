@@ -60,10 +60,10 @@
 				
 		if (mob)		
 		{  
-		 cord.textContent("alpha: " + controls.a.toString+ " \n "+ " beta: "+ controls.b.toString + "\n gamma: "+controls.g.toString) ; 
+		 cord.textContent.replace("alpha: " + controls.a.toString+ " \n "+ " beta: "+ controls.b.toString + "\n gamma: "+controls.g.toString) ; 
 		controls.update();
 		}else
-		{cord.textContent("rotation y: " + cube.rotation.y +"\n rotation x: "+cube.rotation.x  +"\n rotation z: "+cube.rotation.z) ;
+		{cord.textContent.innerHtml("rotation y: " + cube.rotation.y +"\n rotation x: "+cube.rotation.x  +"\n rotation z: "+cube.rotation.z) ;
 		}
 				
 				
