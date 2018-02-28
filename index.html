@@ -69,14 +69,17 @@
 			var animate = function () {
 				requestAnimationFrame( animate );
 				
-		if (mob && count==100)		
-		{  
-		 cord.textContent.replace="alpha: " + controls.a.toString+ " \n "+ " beta: "+ controls.b.toString + "\n gamma: "+controls.g.toString ; 
-		controls.update();
-		count=0;
+		if (mob)		
+		{ 
+			if (couunt== 100)
+			 {console.log("text update");
+			 cord.textContent.replace="alpha: " + controls.a.toString+ " \n "+ " beta: "+ controls.b.toString + "\n gamma: "+controls.g.toString ; 
+			 controls.update();
+			 count=0;}
 		}else
-		{text2.innerHtml="rotation y: " + cube.rotation.y +"\n rotation x: "+cube.rotation.x  +"\n rotation z: "+cube.rotation.z ;
-		count=0;
+		{	if(count==100)
+			 {text2.innerHtml="rotation y: " + cube.rotation.y +"\n rotation x: "+cube.rotation.x  +"\n rotation z: "+cube.rotation.z ;
+			 count=0;}
 		}
 				
 				
