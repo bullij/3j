@@ -73,9 +73,9 @@ var updateTextCounter= 10;
 		{  controls.update();
 			if (count==updateTextCounter)
 			 {
-				text2.textContent ="alpha: " + controls.a +"\r\n";
-				text2.textContent +="beta: "+ controls.b  +"\r\n";
-				text2.textContent +="gamma: "+controls.g; 
+				text2.textContent ="alpha: " + controls.getDO(1) +"\r\n";
+				text2.textContent +="beta: "+controls.getDO(2)  +"\r\n";
+				text2.textContent +="gamma: "controls.getDO(3) ; 
 			
 			 count=0;}
 		}else
