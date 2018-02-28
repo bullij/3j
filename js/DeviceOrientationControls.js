@@ -10,7 +10,7 @@ THREE.DeviceOrientationControls = function( object ) {
 	var scope = this;
 	var a;
 	var b;
-	var j;
+	var j; 
 
 	this.object = object;
 	this.object.rotation.reorder( "YXZ" );
@@ -59,6 +59,17 @@ THREE.DeviceOrientationControls = function( object ) {
 		}
 
 	}();
+
+	var getDO( var do)
+	{
+      if (do == 1)
+      	{return a;}
+      if (do == 2)
+      	{return b;}
+      if (do == 3)
+      	{return g;}
+
+	}
 
 	this.connect = function() {
 
