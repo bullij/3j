@@ -43,6 +43,16 @@
 				container = document.getElementById( 'container' );
 				camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 1100 );
 				controls = new THREE.DeviceOrientationControls( camera );
+				
+				
+				if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+		         		 
+		         		       		 
+		         		 effect = new THREE.StereoEffect(renderer);
+		         		 renderer.setPixelRatio( window.devicePixelRatio );
+						 effect.setSize( window.innerWidth, window.innerHeight );
+						
+                        }
         
 				scene = new THREE.Scene();
         
