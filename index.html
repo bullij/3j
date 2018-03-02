@@ -42,7 +42,7 @@
 					shininess: 15,
 					map: new THREE.TextureLoader().load( "textures/planets/earth_atmos_2048.jpg" ),
 					//specularMap: new THREE.TextureLoader().load( "textures/planets/earth_specular_2048.jpg" ),
-					//normalMap: new THREE.TextureLoader().load( "textures/planets/earth_normal_2048.jpg" ),
+			//закоментил		//normalMap: new THREE.TextureLoader().load( "textures/planets/earth_normal_2048.jpg" ),
 				
 					side:THREE.DoubleSide
 
@@ -51,11 +51,12 @@
 			
 
 
-				geometry = new THREE.SphereBufferGeometry( 500, 600, 40 );
-               
+				geometry = new THREE.SphereBufferGeometry( 500, 600, 40 ); /добавил буффер изменил параметры ди нах
+               			geometry.scale( - 1, 1, 1 );
+				
 				meshPlanet = new THREE.Mesh( geometry, materialNormalMap );
-				group.add( meshPlanet );
-				meshPlanet.scale.x=-1;
+				//group.add( meshPlanet );
+				//meshPlanet.scale.x=-1;
 
 				var light = new THREE.PointLight( 0xffffff, 1, 150 );
 				light.position.set( 0, 0, 0 );
