@@ -25,15 +25,15 @@
 			group = new THREE.Group();
 		    scene.add( group );
             window.addEventListener( 'resize', onWindowResize, false );
-			//var materialNormalMap = new THREE.MeshPhongMaterial( {
-					//specular: 0x333333,
-					//shininess: 15,
-				//	map: new THREE.TextureLoader().load( "textures/planets/earth_atmos_2048.jpg" ),
-				//	specularMap: new THREE.TextureLoader().load( "textures/planets/earth_specular_2048.jpg" ),
-				//	normalMap: new THREE.TextureLoader().load( "textures/planets/earth_normal_2048.jpg" ),
+			var materialNormalMap = new THREE.MeshPhongMaterial( {
+					specular: 0x333333,
+					shininess: 15,
+					map: new THREE.TextureLoader().load( "textures/planets/earth_atmos_2048.jpg" ),
+					specularMap: new THREE.TextureLoader().load( "textures/planets/earth_specular_2048.jpg" ),
+					normalMap: new THREE.TextureLoader().load( "textures/planets/earth_normal_2048.jpg" ),
 				
-				//	side:THREE.DoubleSide
-				//} );
+					side:THREE.DoubleSide
+				} );
 			
 				geometry = new THREE.SphereBufferGeometry( 50, 100, 50 );
 				var material = new THREE.MeshBasicMaterial( {
