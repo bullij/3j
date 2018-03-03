@@ -37,7 +37,8 @@
 			
 				geometry = new THREE.SphereGeometry( 50, 100, 50 );
 				var material = new THREE.MeshBasicMaterial( {
-					map: new THREE.TextureLoader().load( 'textures/planets/earth_atmos_2048.jpg' )
+					map: new THREE.TextureLoader().load( 'textures/planets/earth_atmos_2048.jpg' ),
+					side: THREE.DoubleSide
 				} );
                			geometry.scale( - 1, 1, 1 );
 				meshPlanet = new THREE.Mesh( geometry, material );
