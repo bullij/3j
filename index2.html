@@ -40,7 +40,8 @@
 					map: new THREE.TextureLoader().load( 'textures/planets/earth_atmos_2048.jpg' )
 				} );
                			geometry.scale( - 1, 1, 1 );
-				meshPlanet = new THREE.Mesh( geometry, material );
+				//meshPlanet = new THREE.Mesh( geometry, material );
+				meshPlanet = new THREE.Mesh( geometry, materialNormalMap );
 				group.add( meshPlanet );
 				meshPlanet.scale.x=-1;
 				var light = new THREE.PointLight( 0xffffff, 1, 150 );
