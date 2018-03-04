@@ -49,7 +49,11 @@
 				light.position.set( 0, 0, 0 );
 				group.add( light );
             var mob=false;
-		
+			camera.rotation.y = 90 * Math.PI / 180;
+				camera.rotation.x = 90 * Math.PI / 180;
+				camera.rotation.z = 90 * Math.PI / 180;
+				camera.position.set( 0, 0.01 ,0 );
+				
  			var controls;
 					if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 		         		 
@@ -68,12 +72,8 @@
                             
                             renderer.setSize( window.innerWidth, window.innerHeight );
                         }
-					
-				camera.rotation.y = 90 * Math.PI / 180;
-				camera.rotation.x = 90 * Math.PI / 180;
-				camera.rotation.z = 90 * Math.PI / 180;
-				camera.position.set( 0, 0.01 ,0 );
-				controls.update;
+					controls.update;
+			
 			var animate = function () {
 						  requestAnimationFrame( animate );
 		 				 controls.update();
