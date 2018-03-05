@@ -101,6 +101,9 @@
 			
 			
 			var vw = new THREE.Vector3();
+			var startDate=new Date();
+			var endDate=new Date();
+			var firstLook=false;
 			
 			var animate = function () {
 				
@@ -118,7 +121,23 @@
 			camera.getWorldDirection( vw );
 				
 				if(vw.angleTo( spBut.position)<= gradToRad(5)){
+				if (firstLook==false)
+				{
+				startDate =Date.now();
+				firstLook=true;
+				}
 				spBut.material.color.setHex(0xffffff*Math.random());
+				}
+				else
+				{
+					if (firstLook)
+					{
+						endDate=Date.now();
+						if (endDate-StartDate>5000)
+						{
+							alert("Perexod po silke");
+						}
+					}
 				}
 				
 						  requestAnimationFrame( animate );
