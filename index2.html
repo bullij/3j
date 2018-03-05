@@ -60,6 +60,12 @@
 			group.add(cube);
 			//
 			
+			
+			//spbut
+			var spBut = new THREE.Mesh(  new THREE.SphereGeometry( 5, 32, 32 ),  new THREE.MeshBasicMaterial( {color: 0xffff00} ) );
+			spBut.position.set (0,0,20);
+			group.add(spBut);
+			
             var mob=false;
 			       // camera.rotation.y = 90 * Math.PI / 180;
 				//camera.rotation.x = 90 * Math.PI / 180;
@@ -91,7 +97,7 @@
 		
 			
 			
-			
+			var vw = new THREE.Vector3();
 			var animate = function () {
 				
 				//куб
@@ -101,7 +107,12 @@
 				if ( Math.abs(cube.position.y)== 20) 
 				{cubePos =cubePos*(-1);
 				
-				}
+				}//
+				
+				//spbut
+				spBut.rotation.x += 0.1;
+				vm = camera.getWorldDirection();
+				//if (vm.x == )
 				
 						  requestAnimationFrame( animate );
 		 				 controls.update();
