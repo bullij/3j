@@ -54,7 +54,7 @@
 			var cube = new THREE.Mesh(new THREE.CubeGeometry (1, 1,1),new THREE.MeshBasicMaterial({color: 0x000000}));
 			cube.position.x = 0;
 			cube.position.y = 0 ;
-			cube.position.z = -35;
+			cube.position.z = 30;
 			var cubePos = -1;
 			
 			group.add(cube);
@@ -63,7 +63,7 @@
 			
 			//spbut
 			var spBut = new THREE.Mesh(  new THREE.SphereGeometry( 2, 32, 32 ),  new THREE.MeshBasicMaterial( {color: 0xffff00} ) );
-			spBut.position.set (0,0,25);
+			spBut.position.set (0,0,-30);
 			group.add(spBut);
 			
             var mob=false;
@@ -113,7 +113,7 @@
 				//spbut
 				spBut.rotation.x += 0.1;
 			camera.getWorldDirection( vw );
-				if(vw.angleTo( spBut.position) <= 0.349066){
+				if(vw.angleTo( spBut.position) <= 0.17{
 				spBut.material.color.setHex(0xffffff*Math.random());
 				}
 				
