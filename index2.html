@@ -51,14 +51,14 @@
 			
 				
 			//куб
-			var cube = new THREE.Mesh(new THREE.CubeGeometry (1, 1,1),new THREE.MeshBasicMaterial({color: 0xffffff}));
+			var cube = new THREE.Mesh(new THREE.CubeGeometry (1, 1,1),new THREE.MeshBasicMaterial({color: 0x000000}));
 			cube.position.x = 0;
-			cube.position.y = 10 ;
-			cube.position.z = 0;
-			var cubePos = -10;
+			cube.position.y = 0 ;
+			cube.position.z = 20;
+			var cubePos = -1;
 			
 			group.add(cube);
-			
+			//
 			
             var mob=false;
 			       // camera.rotation.y = 90 * Math.PI / 180;
@@ -96,11 +96,11 @@
 				
 				//куб
 			cubePos++;
-			cube.position.x += 1;
+			cube.position.y += 1*cubePos;
 				
-				if (cubePos == 10) 
-				{cubePos = -10;
-				 cube.position.x=cubePos;
+				if ( Math.abs(cube.position.y)== 20) 
+				{cubePos =cubePos*(-1);
+				
 				}
 				
 						  requestAnimationFrame( animate );
