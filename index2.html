@@ -97,7 +97,8 @@
 		
 			
 			
-			var vw = new THREE.Vector3();
+			var vw = new THREE.Vector3(0,0,-1);
+			
 			var animate = function () {
 				
 				//куб
@@ -111,8 +112,8 @@
 				
 				//spbut
 				spBut.rotation.x += 0.1;
-				vm = camera.getWorldDirection();
-				if (Math.abs(vm.x) <= 1 && Math.abs(vm.y) <= 1 && Math.abs(vm.z) <= 1 ){
+				vm.applyQuaternion( camera.quaternion );
+				if(vw.angleTo( spBut.position <= 1){
 				spBut.material.color.setHex(0xffffff*Math.random());
 				}
 				
