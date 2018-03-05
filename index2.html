@@ -126,19 +126,16 @@
 				startDate =Date.now();
 				firstLook=true;
 				}
-				spBut.material.color.setHex(0xffffff*Math.random());
-				}
-				else
-				{
 					if (firstLook==true)
-					{ console.log("true");
+					{ 
 						endDate=Date.now();
-						if (endDate-startDate>5000)
-						{
-							alert("Perexod po silke");
-							firstLook=false;
+					if (endDate-startDate>5000)
+					{
+						alert("Perexod po silke");
+						firstLook=false;
 						}
 					}
+				spBut.material.color.setHex(0xffffff*Math.random());
 				}
 				
 						  requestAnimationFrame( animate );
