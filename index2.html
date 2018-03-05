@@ -48,6 +48,18 @@
 				var light = new THREE.PointLight( 0xff0000, 1, 150 );
 				light.position.set( 0, 0, 0 );
 				group.add( light );
+			
+				
+			//куб
+			var cube = new THREE.Mesh(new THREE.CubeGeometry (1, 1,1),new THREE.MeshBasicMaterial({color: 0xffffff}));
+			cube.position.x = 0;
+			cube.position.y = 10 ;
+			cube.position.z = 0;
+			var cubePos = -10;
+			
+			group.add(cube);
+			
+			
             var mob=false;
 			       // camera.rotation.y = 90 * Math.PI / 180;
 				//camera.rotation.x = 90 * Math.PI / 180;
@@ -75,7 +87,22 @@
 				controls.target=new THREE.Vector3(0,0,radius/2);
 					controls.update;
 			
+	
+		
+			
+			
+			
 			var animate = function () {
+				
+				//куб
+			cubePos++;
+			cube.position.x += 1;
+				
+				if (cubePos == 10) 
+				{cubePos = -10;
+				 cube.position.x=cubePos;
+				}
+				
 						  requestAnimationFrame( animate );
 		 				 controls.update();
                      if(mob)
