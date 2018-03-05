@@ -97,7 +97,7 @@
 		
 			
 			
-			var vw = new THREE.Vector3(0,0,-1);
+			var vw = new THREE.Vector3();
 			
 			var animate = function () {
 				
@@ -113,7 +113,7 @@
 				//spbut
 				spBut.rotation.x += 0.1;
 			camera.getWorldDirection( vw );
-				if(vw.angleTo( spBut.position) <= 1){
+				if(vw.angleTo( spBut.position) <= 0,349066){
 				spBut.material.color.setHex(0xffffff*Math.random());
 				}
 				
