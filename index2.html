@@ -71,7 +71,10 @@
 				//camera.rotation.x = 90 * Math.PI / 180;
 				//camera.rotation.z = 90 * Math.PI / 180;
 				camera.position.set( 0, 0.01 ,0 );
-				
+		var gradToRad = function(angle)
+		{
+			return angle*180/Math.PI;
+		}
  			var controls;
 					if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 		         		 
@@ -113,7 +116,7 @@
 				//spbut
 				spBut.rotation.x += 0.1;
 			camera.getWorldDirection( vw );
-				if(vw.angleTo( spBut.position)<= 0.17){
+				if(vw.angleTo( spBut.position)<= gradToRad(5)){
 				spBut.material.color.setHex(0xffffff*Math.random());
 				}
 				
